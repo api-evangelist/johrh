@@ -1,0 +1,661 @@
+openapi: 3.1.0
+info:
+  title: Vitrin Account redirects API
+  version: 2026.2.23
+tags:
+- name: redirects
+paths:
+  /coupon/{coupon_code}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Coupon
+      operationId: redirect_coupon_coupon__coupon_code__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /availability/{availability_referer}/products/{product_id}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Product Availability
+      operationId: redirect_product_availability_availability__availability_referer__products__product_id__get
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Product Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/{product_id}/coupon/{coupon_code}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Product Coupon
+      operationId: redirect_product_coupon_products__product_id__coupon__coupon_code__get
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Product Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/{slug}/reviews/add:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Product Reviews
+      operationId: redirect_product_reviews_products__slug__reviews_add_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/sales:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Sale Product
+      operationId: redirect_sale_product_products_sales_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /p:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Products List
+      operationId: redirect_products_list_p_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /p/{slug}/reviews/new:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Add Product Review
+      operationId: redirect_add_product_review_p__slug__reviews_new_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /p/{slug}/reviews:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Product Reviews Shorthand
+      operationId: redirect_product_reviews_shorthand_p__slug__reviews_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /p/{slug}/questions/new:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Add Question
+      operationId: redirect_add_question_p__slug__questions_new_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /p/{slug}/questions:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Product Questions
+      operationId: redirect_product_questions_p__slug__questions_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /p/{slug}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Product Detail
+      operationId: redirect_product_detail_p__slug__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /c:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Categories List
+      operationId: redirect_categories_list_c_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /c/{category_id}/{slug}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Category With Slug
+      operationId: redirect_category_with_slug_c__category_id___slug__get
+      parameters:
+      - name: category_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Category Id
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /c/{category_id}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Category No Slug
+      operationId: redirect_category_no_slug_c__category_id__get
+      parameters:
+      - name: category_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Category Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /o/{code}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Order Invoice
+      operationId: redirect_order_invoice_o__code__get
+      parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Code
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /cart/view:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Cart
+      operationId: redirect_cart_cart_view_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /checkout/single-checkout:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Checkout
+      operationId: redirect_checkout_checkout_single_checkout_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /account-orders:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Account Orders
+      operationId: redirect_account_orders_account_orders_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /account-profile:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Account Profile
+      operationId: redirect_account_profile_account_profile_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /account-addresses:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Account Addresses
+      operationId: redirect_account_addresses_account_addresses_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /account-wishlist:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Account Wishlist
+      operationId: redirect_account_wishlist_account_wishlist_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /account-loyalty-program:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Account Loyalty
+      operationId: redirect_account_loyalty_account_loyalty_program_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /affiliate/{affiliate_referrer}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Affiliate
+      operationId: redirect_affiliate_affiliate__affiliate_referrer__get
+      parameters:
+      - name: affiliate_referrer
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Affiliate Referrer
+      - name: redirect_to
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: Redirect To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /affiliate/{affiliate_referer}/{product_id}:
+    get:
+      tags:
+      - redirects
+      summary: Detect Affiliate Product
+      operationId: detect_affiliate_product_affiliate__affiliate_referer___product_id__get
+      parameters:
+      - name: affiliate_referer
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Affiliate Referer
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Product Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /locales/{locale}:
+    get:
+      tags:
+      - redirects
+      summary: Change Locale
+      operationId: change_locale_locales__locale__get
+      parameters:
+      - name: locale
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Locale
+      - name: redirect_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          default: ''
+          title: Redirect To
+      - name: city_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: City Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/choose-address-and-shipping:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Account Addresses
+      operationId: redirect_account_addresses_checkout_choose_address_and_shipping_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /{slug}/{product_id}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Salla Product
+      operationId: redirect_salla_product__slug___product_id__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /{slug}/{category_id}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Salla Category
+      operationId: redirect_salla_category__slug___category_id__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /blog:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Salla Blog List
+      operationId: redirect_salla_blog_list_blog_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /blog/{slug}/{blog_id}:
+    get:
+      tags:
+      - redirects
+      summary: Redirect Salla Blog Post
+      operationId: redirect_salla_blog_post_blog__slug___blog_id__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

@@ -1,0 +1,490 @@
+openapi: 3.1.0
+info:
+  title: Vitrin Account Storefront API
+  version: 2026.2.23
+tags:
+- name: Storefront
+paths:
+  /blogs:
+    get:
+      tags:
+      - Storefront
+      summary: List Blogs
+      operationId: list_blogs_blogs_get
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+          title: Page
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 100
+          minimum: 1
+          default: 24
+          title: Page Size
+      - name: category
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Filter by category slug
+          title: Category
+        description: Filter by category slug
+      - name: tags
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Filter by tags slugs (comma-separated)
+          title: Tags
+        description: Filter by tags slugs (comma-separated)
+      - name: ordering
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Ordering
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /blogs/{slug}:
+    get:
+      tags:
+      - Storefront
+      summary: Blogs
+      operationId: blogs_blogs__slug__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /pages/{slug}:
+    get:
+      tags:
+      - Storefront
+      summary: Pages
+      operationId: pages_pages__slug__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /faqs:
+    get:
+      tags:
+      - Storefront
+      summary: Faqs
+      operationId: faqs_faqs_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /shipping-and-payment:
+    get:
+      tags:
+      - Storefront
+      summary: Shipping Payment
+      operationId: shipping_payment_shipping_and_payment_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /l/{slug}:
+    get:
+      tags:
+      - Storefront
+      summary: Landing Page
+      operationId: landing_page_l__slug__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /affiliate-reports/{report_code}:
+    get:
+      tags:
+      - Storefront
+      summary: Affiliate Reports
+      operationId: affiliate_reports_affiliate_reports__report_code__get
+      parameters:
+      - name: report_code
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Report Code
+      - name: date_from
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+          title: Date From
+      - name: date_to
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+          title: Date To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/{file}:
+    get:
+      tags:
+      - Storefront
+      summary: Well Known
+      operationId: well_known__well_known__file__get
+      parameters:
+      - name: file
+        in: path
+        required: true
+        schema:
+          type: string
+          title: File
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /sitemaps/{map_type}.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Sitemap Xml
+      operationId: sitemap_xml_sitemaps__map_type__xml_get
+      parameters:
+      - name: map_type
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - enum:
+            - sitemap
+            - products
+            - product
+            - feeds
+            - pages
+            - categories
+            - index
+            - products_reviews
+            type: string
+          - type: string
+          title: Map Type
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /{map_type}.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Sitemap Xml
+      operationId: sitemap_xml__map_type__xml_get
+      parameters:
+      - name: map_type
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - enum:
+            - sitemap
+            - products
+            - product
+            - feeds
+            - pages
+            - categories
+            - index
+            - products_reviews
+            type: string
+          - type: string
+          title: Map Type
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /feeds/product/{feed_map}:
+    get:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: products_feed_feeds_product__feed_map__get
+      parameters:
+      - name: feed_map
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Feed Map
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /feeds/{token}/feed.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Product Feed V2
+      description: 'Stream the gzipped XML product feed from the merchant''s own domain.
+
+
+        Backs the new `product_feeds` system in extension-backend. The token is
+
+        stable per-feed (rotated on regen via S3 key reuse), and the underlying
+
+        object is uploaded with `Content-Encoding: gzip`, so we pass the raw
+
+        bytes through unchanged and mirror the upstream headers so crawlers
+
+        (Meta Catalog, TikTok, Google Merchant Center) decompress correctly.'
+      operationId: product_feed_v2_feeds__token__feed_xml_get
+      parameters:
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /feeds/reviews/google:
+    get:
+      tags:
+      - Storefront
+      summary: Products Reviews Feed
+      operationId: products_reviews_feed_feeds_reviews_google_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+  /validate:
+    get:
+      tags:
+      - Storefront
+      summary: Validate Theme
+      operationId: validate_theme_validate_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /blog/feed.rss:
+    get:
+      tags:
+      - Storefront
+      summary: Blog Rss Feed
+      operationId: blog_rss_feed_blog_feed_rss_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /blog/sitemap.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Blog Sitemap
+      operationId: blog_sitemap_blog_sitemap_xml_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /blog/categories/{category_slug}/feed.rss:
+    get:
+      tags:
+      - Storefront
+      summary: Blog Category Rss Feed
+      operationId: blog_category_rss_feed_blog_categories__category_slug__feed_rss_get
+      parameters:
+      - name: category_slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Category Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

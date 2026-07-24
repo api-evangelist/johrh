@@ -1,0 +1,146 @@
+openapi: 3.1.0
+info:
+  title: Vitrin Account Checkout API
+  version: 2026.2.23
+tags:
+- name: Checkout
+paths:
+  /cart:
+    get:
+      tags:
+      - Checkout
+      summary: Cart Page
+      operationId: cart_page_cart_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /checkout/guest:
+    get:
+      tags:
+      - Checkout
+      summary: Single Page Checkout Guest
+      operationId: single_page_checkout_guest_checkout_guest_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /checkout:
+    get:
+      tags:
+      - Checkout
+      summary: Single Page Checkout
+      operationId: single_page_checkout_checkout_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /checkout/shipping:
+    get:
+      tags:
+      - Checkout
+      summary: Choose Shipping
+      operationId: choose_shipping_checkout_shipping_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /checkout/payment:
+    get:
+      tags:
+      - Checkout
+      summary: Choose Payment
+      operationId: choose_payment_checkout_payment_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+  /checkout/fromBasket/{cart_id}:
+    get:
+      tags:
+      - Checkout
+      summary: From Basket
+      operationId: from_basket_checkout_fromBasket__cart_id__get
+      parameters:
+      - name: cart_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cart Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /cart/clone:
+    get:
+      tags:
+      - Checkout
+      summary: Clone Cart
+      operationId: clone_cart_cart_clone_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

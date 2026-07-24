@@ -1,0 +1,725 @@
+openapi: 3.1.0
+info:
+  title: Vitrin Account internal API
+  version: 2026.2.23
+tags:
+- name: internal
+paths:
+  /checkout/{payment_token}/tabby/success:
+    get:
+      tags:
+      - internal
+      summary: Handle Tabby Success
+      operationId: handle_tabby_success_checkout__payment_token__tabby_success_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      - name: payment_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Payment Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tamara/success:
+    get:
+      tags:
+      - internal
+      summary: Handle Tamara Success
+      operationId: handle_tamara_success_checkout__payment_token__tamara_success_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      - name: orderId
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Orderid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/emkan/success:
+    get:
+      tags:
+      - internal
+      summary: Handle Emkan Success
+      operationId: handle_emkan_success_checkout__payment_token__emkan_success_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/madfu/failure:
+    get:
+      tags:
+      - internal
+      summary: Handle Payment Failure
+      operationId: handle_payment_failure_checkout__payment_token__madfu_failure_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/emkan/failure:
+    get:
+      tags:
+      - internal
+      summary: Handle Payment Failure
+      operationId: handle_payment_failure_checkout__payment_token__emkan_failure_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tamara/failure:
+    get:
+      tags:
+      - internal
+      summary: Handle Payment Failure
+      operationId: handle_payment_failure_checkout__payment_token__tamara_failure_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tabby/failure:
+    get:
+      tags:
+      - internal
+      summary: Handle Payment Failure
+      operationId: handle_payment_failure_checkout__payment_token__tabby_failure_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/emkan/cancel:
+    get:
+      tags:
+      - internal
+      summary: Handle Payment Failure
+      operationId: handle_payment_failure_checkout__payment_token__emkan_cancel_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tamara/cancel:
+    get:
+      tags:
+      - internal
+      summary: Handle Payment Failure
+      operationId: handle_payment_failure_checkout__payment_token__tamara_cancel_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tabby/cancel:
+    get:
+      tags:
+      - internal
+      summary: Handle Payment Failure
+      operationId: handle_payment_failure_checkout__payment_token__tabby_cancel_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/zidpay/callback:
+    get:
+      tags:
+      - internal
+      summary: Handle Zidpay Success
+      operationId: handle_zidpay_success_checkout__payment_token__zidpay_callback_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      - name: paymentReferenceId
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Paymentreferenceid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/zidpay/error:
+    get:
+      tags:
+      - internal
+      summary: Handle Zidpay Failure
+      operationId: handle_zidpay_failure_checkout__payment_token__zidpay_error_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      - name: paymentReferenceId
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Paymentreferenceid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/from-token:
+    get:
+      tags:
+      - internal
+      summary: Get Checkout Token
+      description: The endpoint used by mobile apps to correctly use the checkout mobile webview. apps that use vitrin APIs for cart operations do not need this.
+      operationId: get_checkout_token_checkout_from_token_get
+      deprecated: true
+      parameters:
+      - name: checkout-token
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Checkout-Token
+      - name: source
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Source
+      - name: lang
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Lang
+      - name: country
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Country
+      - name: currency
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Currency
+      - name: city
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: integer
+          - type: string
+          - type: 'null'
+          title: City
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /mis-callback:
+    get:
+      tags:
+      - internal
+      summary: Handle Mispay Callback
+      operationId: handle_mispay_callback_mis_callback_get
+      parameters:
+      - name: _
+        in: query
+        required: true
+        schema:
+          type: string
+          title: ' '
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/madfu/success:
+    get:
+      tags:
+      - internal
+      summary: Handle Madfu Success
+      operationId: handle_madfu_success_checkout__payment_token__madfu_success_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/madfu/cancel:
+    get:
+      tags:
+      - internal
+      summary: Handle Madfu Cancel
+      operationId: handle_madfu_cancel_checkout__payment_token__madfu_cancel_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tap/callback:
+    get:
+      tags:
+      - internal
+      summary: Handle Tap Callback
+      description: Handle Tap payment redirect callback
+      operationId: handle_tap_callback_checkout__payment_token__tap_callback_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      - name: tap_id
+        in: query
+        required: false
+        schema:
+          type: string
+          title: Tap Id
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: string
+          title: Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tap/cancel:
+    get:
+      tags:
+      - internal
+      summary: Handle Tap Failure
+      operationId: handle_tap_failure_checkout__payment_token__tap_cancel_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /checkout/{payment_token}/tap/failure:
+    get:
+      tags:
+      - internal
+      summary: Handle Tap Failure
+      operationId: handle_tap_failure_checkout__payment_token__tap_failure_get
+      parameters:
+      - name: payment_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Payment Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /templates/_compile:
+    post:
+      tags:
+      - internal
+      summary: Compile Template
+      operationId: compile_template_templates__compile_post
+      parameters:
+      - name: version_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Version Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /templates/_publish:
+    post:
+      tags:
+      - internal
+      summary: Publish Store Settings
+      operationId: publish_store_settings_templates__publish_post
+      parameters:
+      - name: namespace
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Namespace
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /_cache/{prefix}:
+    delete:
+      tags:
+      - internal
+      summary: Bump Cache Version
+      operationId: bump_cache_version__cache__prefix__delete
+      parameters:
+      - name: prefix
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Prefix
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /_cache-bulk:
+    delete:
+      tags:
+      - internal
+      summary: Bust Multiple Cache Keys
+      operationId: bust_multiple_cache_keys__cache_bulk_delete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                type: string
+              type: array
+              title: Keys
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /healthz:
+    get:
+      tags:
+      - internal
+      summary: Health Check
+      operationId: health_check_healthz_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /robots.txt:
+    get:
+      tags:
+      - internal
+      summary: Robots Txt
+      operationId: robots_txt_robots_txt_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

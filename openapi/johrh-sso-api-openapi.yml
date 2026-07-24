@@ -1,0 +1,142 @@
+openapi: 3.1.0
+info:
+  title: Vitrin Account SSO API
+  version: 2026.2.23
+tags:
+- name: SSO
+paths:
+  /sso/check:
+    get:
+      tags:
+      - SSO
+      summary: Sso Check
+      description: 'SSO domain endpoint. Checks if the SSO session has a valid customer_token.
+
+        - If authenticated: create one-time token -> redirect to {origin}/sso/callback
+
+        - If not: redirect to SSO login page with redirect_to={origin}{return_to}'
+      operationId: sso_check_sso_check_get
+      parameters:
+      - name: origin
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Origin
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          type: string
+          default: /
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /sso/logout:
+    get:
+      tags:
+      - SSO
+      summary: Sso Logout
+      description: SSO domain endpoint. Clears the SSO session and redirects back to the store.
+      operationId: sso_logout_sso_logout_get
+      parameters:
+      - name: return_to
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /sso/callback:
+    get:
+      tags:
+      - SSO
+      summary: Sso Callback
+      description: 'Store domain endpoint. Receives one-time token from SSO, sets store session.
+
+        Handles Case A: SSO already had a session for this customer.'
+      operationId: sso_callback_sso_callback_get
+      parameters:
+      - name: token
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Token
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          type: string
+          default: /
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

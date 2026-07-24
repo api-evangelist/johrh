@@ -1,0 +1,338 @@
+openapi: 3.1.0
+info:
+  title: Vitrin Account Products API
+  version: 2026.2.23
+tags:
+- name: Products
+paths:
+  /products:
+    get:
+      tags:
+      - Products
+      summary: List products
+      operationId: list_products_products_get
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: integer
+          - {}
+          description: Page number
+          default: 1
+          title: Page
+        description: Page number
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: integer
+          - {}
+          description: Items per page
+          default: 24
+          title: Page Size
+        description: Items per page
+      - name: q
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - {}
+          - type: 'null'
+          title: Q
+      - name: sort_by
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - enum:
+            - popularity_order
+            - price
+            - display_order
+            - created_at
+            type: string
+          - type: string
+          - type: 'null'
+          title: Sort By
+      - name: order
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - enum:
+            - asc
+            - desc
+            type: string
+          - type: string
+          - {}
+          - type: 'null'
+          default: asc
+          title: Order
+      - name: categories
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - {}
+          - type: 'null'
+          description: Filter by category
+          title: Categories
+        description: Filter by category
+      - name: price_min
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: number
+          - {}
+          - type: 'null'
+          description: Minimum price filter
+          title: Price Min
+        description: Minimum price filter
+      - name: price_max
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: number
+          - {}
+          - type: 'null'
+          description: Maximum price filter
+          title: Price Max
+        description: Maximum price filter
+      - name: on_sale
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: boolean
+          - {}
+          - type: 'null'
+          description: Filter on sale products
+          title: On Sale
+        description: Filter on sale products
+      - name: attribute_values
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: array
+            items:
+              type: string
+          - {}
+          - type: 'null'
+          description: Filter by attribute values
+          title: Attribute Values
+        description: Filter by attribute values
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/{slug}/reviews:
+    get:
+      tags:
+      - Products
+      summary: List products
+      operationId: product_reviews_products__slug__reviews_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          description: Page number
+          default: 1
+          title: Page
+        description: Page number
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          type: integer
+          description: Items per page
+          default: 24
+          title: Page Size
+        description: Items per page
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/{slug}/reviews/new:
+    get:
+      tags:
+      - Products
+      summary: add a product review
+      operationId: add_product_review_products__slug__reviews_new_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/{slug}/questions:
+    get:
+      tags:
+      - Products
+      summary: Product Questions
+      operationId: product_questions_products__slug__questions_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/{slug}/questions/new:
+    get:
+      tags:
+      - Products
+      summary: add a product review
+      operationId: add_question_products__slug__questions_new_get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /products/{slug}:
+    get:
+      tags:
+      - Products
+      summary: Product Details
+      operationId: product_details_products__slug__get
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Slug
+      - name: pid
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Selected product ID
+          title: Pid
+        description: Selected product ID
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
