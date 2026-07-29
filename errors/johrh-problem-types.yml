@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/johrh-openapi.json
+format: fastapi-http-validation-error
+notes: >-
+  Derived from the OpenAPI 3.1 responses served by the Zid "Vitrin" storefront
+  application at johrh.com/openapi.json. The spec declares only two response
+  classes across its 111 operations: 200 (Successful Response) and 422
+  (Validation Error). Errors are NOT RFC 9457 problem+json; they use the
+  standard FastAPI validation-error envelope (HTTPValidationError -> detail[] of
+  ValidationError with loc/msg/type). No 4xx/5xx business-error taxonomy is
+  published in the spec.
+envelope:
+  media_type: application/json
+  schema: HTTPValidationError
+  shape:
+    detail:
+      - loc: ["path or query", "field"]
+        msg: human-readable validation message
+        type: error type identifier
+        input: offending input value
+        ctx: additional context object
+problems:
+  - status: 422
+    title: Validation Error
+    schema: HTTPValidationError
+    media_type: application/json
+    occurrences: 74
+    description: >-
+      Request path/query parameters failed validation. Returned by 74 of the
+      111 storefront operations (those carrying path/query parameters).
+    source_operation: openapi/johrh-openapi.json#redirect_product_availability_availability__availability_referer__products__product_id__get

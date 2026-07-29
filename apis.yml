@@ -1,7 +1,14 @@
 aid: johrh
 name: Johrh
-description: Johrh is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Johrh (جوهره للعبايات, "Johrh for Abayas") is a Saudi Arabian direct-to-consumer
+  women's fashion retailer specializing in abayas, jalabiyas, niqabs, scarves (طرح),
+  bags, and complementary modest-wear. The brand operates an Arabic-language online
+  storefront hosted on the Zid e-commerce platform, selling across price tiers (99 SAR,
+  199 SAR, and premium occasion pieces) with checkout through Saudi payment and
+  buy-now-pay-later gateways (Tabby, Tamara, Madfu, Emkan, ZidPay, Tap, MisPay). It
+  was surfaced as a portfolio-linked company and added to the API Evangelist network;
+  its public web surface is served by the Zid "Vitrin" storefront application, whose
+  OpenAPI is published at johrh.com/openapi.json.
 url: https://raw.githubusercontent.com/api-evangelist/johrh/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +16,203 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-platform: zid
+x-storefront-app: vitrin
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://media.zid.store/cdn-cgi/image/w=1200,h=630,q=90/https://media.zid.store/d7699e7e-9682-49b6-8cdd-fe75ff006885/d793edad-f37e-464f-b5e3-d25e87c467ec.svg
 tags:
 - Company
-apis: []
+- Retail
+- E-commerce
+- Fashion
+- Apparel
+- Abaya
+- Modest Wear
+- Saudi Arabia
+- Zid
+- Storefront
+apis:
+- aid: johrh:johrh-account-api
+  name: Johrh Account API
+  description: The Account API from Johrh — 9 operation(s) for account.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Account
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-account-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-auth-api
+  name: Johrh Auth API
+  description: The Auth API from Johrh — 4 operation(s) for auth.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-auth-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-categories-api
+  name: Johrh Categories API
+  description: The Categories API from Johrh — 3 operation(s) for categories.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-categories-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-checkout-api
+  name: Johrh Checkout API
+  description: The Checkout API from Johrh — 7 operation(s) for checkout.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Checkout
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-checkout-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-internal-api
+  name: Johrh internal API
+  description: The internal API from Johrh — 25 operation(s) for internal.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - internal
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-internal-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-metrics-api
+  name: Johrh Metrics API
+  description: The Metrics API from Johrh — 1 operation(s) for metrics.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-metrics-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-orders-api
+  name: Johrh Orders API
+  description: The Orders API from Johrh — 6 operation(s) for orders.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-orders-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-payments-api
+  name: Johrh Payments API
+  description: The Payments API from Johrh — 19 operation(s) for payments.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-payments-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-products-api
+  name: Johrh Products API
+  description: The Products API from Johrh — 6 operation(s) for products.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-products-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-redirects-api
+  name: Johrh redirects API
+  description: The redirects API from Johrh — 30 operation(s) for redirects.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - redirects
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-redirects-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-sso-api
+  name: Johrh SSO API
+  description: The SSO API from Johrh — 3 operation(s) for sso.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - SSO
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-sso-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
+- aid: johrh:johrh-storefront-api
+  name: Johrh Storefront API
+  description: The Storefront API from Johrh — 17 operation(s) for storefront.
+  humanURL: https://johrh.com
+  baseURL: https://johrh.com
+  tags:
+  - Storefront
+  properties:
+  - type: OpenAPI
+    url: openapi/johrh-storefront-api-openapi.yml
+  - type: APIReference
+    url: https://johrh.com/openapi.json
+  - type: ErrorCatalog
+    url: errors/johrh-problem-types.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +221,12 @@ maintainers:
 common:
 - type: Website
   url: https://johrh.com
+- type: DomainSecurity
+  url: security/johrh-domain-security.yml
+- type: WellKnown
+  url: well-known/johrh-well-known.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

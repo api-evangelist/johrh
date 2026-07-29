@@ -1,0 +1,36 @@
+{
+  "provider": "johrh",
+  "sources": [
+    "johrh-account-api-openapi.yml",
+    "johrh-auth-api-openapi.yml",
+    "johrh-categories-api-openapi.yml",
+    "johrh-checkout-api-openapi.yml",
+    "johrh-internal-api-openapi.yml",
+    "johrh-metrics-api-openapi.yml",
+    "johrh-orders-api-openapi.yml",
+    "johrh-payments-api-openapi.yml",
+    "johrh-products-api-openapi.yml",
+    "johrh-redirects-api-openapi.yml",
+    "johrh-sso-api-openapi.yml",
+    "johrh-storefront-api-openapi.yml"
+  ],
+  "outputs": [
+    "johrh-account-api-openapi.yml",
+    "johrh-auth-api-openapi.yml",
+    "johrh-categories-api-openapi.yml",
+    "johrh-checkout-api-openapi.yml",
+    "johrh-internal-api-openapi.yml",
+    "johrh-metrics-api-openapi.yml",
+    "johrh-orders-api-openapi.yml",
+    "johrh-payments-api-openapi.yml",
+    "johrh-products-api-openapi.yml",
+    "johrh-redirects-api-openapi.yml",
+    "johrh-sso-api-openapi.yml",
+    "johrh-storefront-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

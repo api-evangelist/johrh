@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of https://johrh.com/.well-known/*
+host: https://johrh.com
+notes: >-
+  Probed the standard discovery surface on the Johrh storefront host. None of
+  the well-known discovery documents are published (all 404). The storefront
+  does expose a catch-all /.well-known/{file} route in its OpenAPI, but no
+  standard discovery document resolves. Absence recorded as valid data.
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
