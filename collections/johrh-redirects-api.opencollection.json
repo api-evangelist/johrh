@@ -1,0 +1,492 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account redirects API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "redirects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Redirect Coupon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/coupon/:coupon_code"
+          },
+          "docs": "Redirect Coupon"
+        },
+        {
+          "info": {
+            "name": "Redirect Product Availability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/availability/:availability_referer/products/:product_id",
+            "params": [
+              {
+                "name": "product_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Product Availability"
+        },
+        {
+          "info": {
+            "name": "Redirect Product Coupon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:product_id/coupon/:coupon_code",
+            "params": [
+              {
+                "name": "product_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Product Coupon"
+        },
+        {
+          "info": {
+            "name": "Redirect Product Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:slug/reviews/add",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Product Reviews"
+        },
+        {
+          "info": {
+            "name": "Redirect Sale Product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/sales"
+          },
+          "docs": "Redirect Sale Product"
+        },
+        {
+          "info": {
+            "name": "Redirect Products List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/p"
+          },
+          "docs": "Redirect Products List"
+        },
+        {
+          "info": {
+            "name": "Redirect Add Product Review",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/p/:slug/reviews/new",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Add Product Review"
+        },
+        {
+          "info": {
+            "name": "Redirect Product Reviews Shorthand",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/p/:slug/reviews",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Product Reviews Shorthand"
+        },
+        {
+          "info": {
+            "name": "Redirect Add Question",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/p/:slug/questions/new",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Add Question"
+        },
+        {
+          "info": {
+            "name": "Redirect Product Questions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/p/:slug/questions",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Product Questions"
+        },
+        {
+          "info": {
+            "name": "Redirect Product Detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/p/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Product Detail"
+        },
+        {
+          "info": {
+            "name": "Redirect Categories List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/c"
+          },
+          "docs": "Redirect Categories List"
+        },
+        {
+          "info": {
+            "name": "Redirect Category With Slug",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/c/:category_id/:slug",
+            "params": [
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Category With Slug"
+        },
+        {
+          "info": {
+            "name": "Redirect Category No Slug",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/c/:category_id",
+            "params": [
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Category No Slug"
+        },
+        {
+          "info": {
+            "name": "Redirect Order Invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/o/:code",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Order Invoice"
+        },
+        {
+          "info": {
+            "name": "Redirect Cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/cart/view"
+          },
+          "docs": "Redirect Cart"
+        },
+        {
+          "info": {
+            "name": "Redirect Checkout",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/single-checkout"
+          },
+          "docs": "Redirect Checkout"
+        },
+        {
+          "info": {
+            "name": "Redirect Account Orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account-orders"
+          },
+          "docs": "Redirect Account Orders"
+        },
+        {
+          "info": {
+            "name": "Redirect Account Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account-profile"
+          },
+          "docs": "Redirect Account Profile"
+        },
+        {
+          "info": {
+            "name": "Redirect Account Addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account-addresses"
+          },
+          "docs": "Redirect Account Addresses"
+        },
+        {
+          "info": {
+            "name": "Redirect Account Wishlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account-wishlist"
+          },
+          "docs": "Redirect Account Wishlist"
+        },
+        {
+          "info": {
+            "name": "Redirect Account Loyalty",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account-loyalty-program"
+          },
+          "docs": "Redirect Account Loyalty"
+        },
+        {
+          "info": {
+            "name": "Redirect Affiliate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/affiliate/:affiliate_referrer",
+            "params": [
+              {
+                "name": "affiliate_referrer",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "redirect_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Redirect Affiliate"
+        },
+        {
+          "info": {
+            "name": "Detect Affiliate Product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/affiliate/:affiliate_referer/:product_id",
+            "params": [
+              {
+                "name": "affiliate_referer",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "product_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Detect Affiliate Product"
+        },
+        {
+          "info": {
+            "name": "Change Locale",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/locales/:locale",
+            "params": [
+              {
+                "name": "locale",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "redirect_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "city_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Change Locale"
+        },
+        {
+          "info": {
+            "name": "Redirect Account Addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/choose-address-and-shipping"
+          },
+          "docs": "Redirect Account Addresses"
+        },
+        {
+          "info": {
+            "name": "Redirect Salla Product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:slug/:product_id",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Salla Product"
+        },
+        {
+          "info": {
+            "name": "Redirect Salla Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:slug/:category_id",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Salla Category"
+        },
+        {
+          "info": {
+            "name": "Redirect Salla Blog List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/blog"
+          },
+          "docs": "Redirect Salla Blog List"
+        },
+        {
+          "info": {
+            "name": "Redirect Salla Blog Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/blog/:slug/:blog_id",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Redirect Salla Blog Post"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

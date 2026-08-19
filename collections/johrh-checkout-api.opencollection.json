@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account Checkout API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Checkout",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cart Page",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/cart"
+          },
+          "docs": "Cart Page"
+        },
+        {
+          "info": {
+            "name": "Single Page Checkout Guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/guest"
+          },
+          "docs": "Single Page Checkout Guest"
+        },
+        {
+          "info": {
+            "name": "Single Page Checkout",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout"
+          },
+          "docs": "Single Page Checkout"
+        },
+        {
+          "info": {
+            "name": "Choose Shipping",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/shipping"
+          },
+          "docs": "Choose Shipping"
+        },
+        {
+          "info": {
+            "name": "Choose Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/payment"
+          },
+          "docs": "Choose Payment"
+        },
+        {
+          "info": {
+            "name": "From Basket",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/fromBasket/:cart_id",
+            "params": [
+              {
+                "name": "cart_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "From Basket"
+        },
+        {
+          "info": {
+            "name": "Clone Cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/cart/clone"
+          },
+          "docs": "Clone Cart"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

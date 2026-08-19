@@ -1,0 +1,314 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account Storefront API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Storefront",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Blogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/blogs",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter by category slug"
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query",
+                "description": "Filter by tags slugs (comma-separated)"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Blogs"
+        },
+        {
+          "info": {
+            "name": "Blogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/blogs/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Blogs"
+        },
+        {
+          "info": {
+            "name": "Pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/pages/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Pages"
+        },
+        {
+          "info": {
+            "name": "Faqs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/faqs"
+          },
+          "docs": "Faqs"
+        },
+        {
+          "info": {
+            "name": "Shipping Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/shipping-and-payment"
+          },
+          "docs": "Shipping Payment"
+        },
+        {
+          "info": {
+            "name": "Landing Page",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/l/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Landing Page"
+        },
+        {
+          "info": {
+            "name": "Affiliate Reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/affiliate-reports/:report_code",
+            "params": [
+              {
+                "name": "report_code",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Affiliate Reports"
+        },
+        {
+          "info": {
+            "name": "Well Known",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/.well-known/:file",
+            "params": [
+              {
+                "name": "file",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Well Known"
+        },
+        {
+          "info": {
+            "name": "Sitemap Xml",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/sitemaps/:map_type.xml",
+            "params": [
+              {
+                "name": "map_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Sitemap Xml"
+        },
+        {
+          "info": {
+            "name": "Sitemap Xml",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:map_type.xml",
+            "params": [
+              {
+                "name": "map_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Sitemap Xml"
+        },
+        {
+          "info": {
+            "name": "Products Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/feeds/product/:feed_map",
+            "params": [
+              {
+                "name": "feed_map",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Products Feed"
+        },
+        {
+          "info": {
+            "name": "Product Feed V2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/feeds/:token/feed.xml",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Stream the gzipped XML product feed from the merchant's own domain.\n\nBacks the new `product_feeds` system in extension-backend. The token is\nstable per-feed (rotated on regen via S3 key reuse), and the underlying\nobject is uploaded with `Content-Encoding: gzip`, so we pass the raw\nbytes through unchanged and mirror the upstream headers so crawlers\n(Meta Catalog, TikTok, Google Merchant Center) decompress correctly."
+        },
+        {
+          "info": {
+            "name": "Products Reviews Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/feeds/reviews/google"
+          },
+          "docs": "Products Reviews Feed"
+        },
+        {
+          "info": {
+            "name": "Validate Theme",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/validate"
+          },
+          "docs": "Validate Theme"
+        },
+        {
+          "info": {
+            "name": "Blog Rss Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/blog/feed.rss"
+          },
+          "docs": "Blog Rss Feed"
+        },
+        {
+          "info": {
+            "name": "Blog Sitemap",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/blog/sitemap.xml"
+          },
+          "docs": "Blog Sitemap"
+        },
+        {
+          "info": {
+            "name": "Blog Category Rss Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/blog/categories/:category_slug/feed.rss",
+            "params": [
+              {
+                "name": "category_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Blog Category Rss Feed"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

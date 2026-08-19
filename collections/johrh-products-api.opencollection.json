@@ -1,0 +1,196 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account Products API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List products",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Filter by category"
+              },
+              {
+                "name": "price_min",
+                "value": "",
+                "type": "query",
+                "description": "Minimum price filter"
+              },
+              {
+                "name": "price_max",
+                "value": "",
+                "type": "query",
+                "description": "Maximum price filter"
+              },
+              {
+                "name": "on_sale",
+                "value": "",
+                "type": "query",
+                "description": "Filter on sale products"
+              },
+              {
+                "name": "attribute_values",
+                "value": "",
+                "type": "query",
+                "description": "Filter by attribute values"
+              }
+            ]
+          },
+          "docs": "List products"
+        },
+        {
+          "info": {
+            "name": "List products",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:slug/reviews",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              }
+            ]
+          },
+          "docs": "List products"
+        },
+        {
+          "info": {
+            "name": "add a product review",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:slug/reviews/new",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "add a product review"
+        },
+        {
+          "info": {
+            "name": "Product Questions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:slug/questions",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Product Questions"
+        },
+        {
+          "info": {
+            "name": "add a product review",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:slug/questions/new",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "add a product review"
+        },
+        {
+          "info": {
+            "name": "Product Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pid",
+                "value": "",
+                "type": "query",
+                "description": "Selected product ID"
+              }
+            ]
+          },
+          "docs": "Product Details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

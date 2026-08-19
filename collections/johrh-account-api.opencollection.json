@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account"
+          },
+          "docs": "Profile"
+        },
+        {
+          "info": {
+            "name": "Orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account/orders",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              }
+            ]
+          },
+          "docs": "Orders"
+        },
+        {
+          "info": {
+            "name": "Shared Wishlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/wishlist",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              }
+            ]
+          },
+          "docs": "Shared Wishlist"
+        },
+        {
+          "info": {
+            "name": "Wishlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account/wishlist",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              }
+            ]
+          },
+          "docs": "Wishlist"
+        },
+        {
+          "info": {
+            "name": "Loyalty Program",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account/loyalty-program"
+          },
+          "docs": "Loyalty Program"
+        },
+        {
+          "info": {
+            "name": "Addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/addresses"
+          },
+          "docs": "Addresses"
+        },
+        {
+          "info": {
+            "name": "Add Address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/addresses/new"
+          },
+          "docs": "Add Address"
+        },
+        {
+          "info": {
+            "name": "Edit Address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/addresses/:address_id",
+            "params": [
+              {
+                "name": "address_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Edit Address"
+        },
+        {
+          "info": {
+            "name": "Wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/account/wallet"
+          },
+          "docs": "Wallet"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

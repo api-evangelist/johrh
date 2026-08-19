@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account Orders API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Render order invoice (order-summary alias)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/order-summary/:order_code/invoice",
+            "params": [
+              {
+                "name": "order_code",
+                "value": "",
+                "type": "path",
+                "description": "Code of the order"
+              }
+            ]
+          },
+          "docs": "Render order invoice (order-summary alias)"
+        },
+        {
+          "info": {
+            "name": "Render order invoice (short-link alias)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/o/:order_code/inv",
+            "params": [
+              {
+                "name": "order_code",
+                "value": "",
+                "type": "path",
+                "description": "Code of the order"
+              }
+            ]
+          },
+          "docs": "Render order invoice (short-link alias)"
+        },
+        {
+          "info": {
+            "name": "Render transaction slip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orders/:order_code/transaction-slip",
+            "params": [
+              {
+                "name": "order_code",
+                "value": "",
+                "type": "path",
+                "description": "Code of the order"
+              }
+            ]
+          },
+          "docs": "Render transaction slip"
+        },
+        {
+          "info": {
+            "name": "Order Completed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/order-completed/:order_code/invoice",
+            "params": [
+              {
+                "name": "order_code",
+                "value": "",
+                "type": "path",
+                "description": "Code of the order"
+              }
+            ]
+          },
+          "docs": "Order Completed"
+        },
+        {
+          "info": {
+            "name": "Render completed order view",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orders/:order_code/completed",
+            "params": [
+              {
+                "name": "order_code",
+                "value": "",
+                "type": "path",
+                "description": "Code of the order"
+              }
+            ]
+          },
+          "docs": "Render completed order view"
+        },
+        {
+          "info": {
+            "name": "Render order invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orders/:order_code/invoice",
+            "params": [
+              {
+                "name": "order_code",
+                "value": "",
+                "type": "path",
+                "description": "Code of the order"
+              }
+            ]
+          },
+          "docs": "Render order invoice"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

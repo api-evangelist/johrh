@@ -1,0 +1,179 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account Categories API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/categories"
+          },
+          "docs": "List Categories"
+        },
+        {
+          "info": {
+            "name": "Category Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/categories/:category_id",
+            "params": [
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Filter by category"
+              },
+              {
+                "name": "price_min",
+                "value": "",
+                "type": "query",
+                "description": "Minimum price filter"
+              },
+              {
+                "name": "price_max",
+                "value": "",
+                "type": "query",
+                "description": "Maximum price filter"
+              },
+              {
+                "name": "on_sale",
+                "value": "",
+                "type": "query",
+                "description": "Filter on sale products"
+              },
+              {
+                "name": "attribute_values",
+                "value": "",
+                "type": "query",
+                "description": "Filter by attribute values"
+              }
+            ]
+          },
+          "docs": "Category Details"
+        },
+        {
+          "info": {
+            "name": "Category Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/categories/:category_id/:slug",
+            "params": [
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Filter by category"
+              },
+              {
+                "name": "price_min",
+                "value": "",
+                "type": "query",
+                "description": "Minimum price filter"
+              },
+              {
+                "name": "price_max",
+                "value": "",
+                "type": "query",
+                "description": "Maximum price filter"
+              },
+              {
+                "name": "on_sale",
+                "value": "",
+                "type": "query",
+                "description": "Filter on sale products"
+              },
+              {
+                "name": "attribute_values",
+                "value": "",
+                "type": "query",
+                "description": "Filter by attribute values"
+              }
+            ]
+          },
+          "docs": "Category Details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

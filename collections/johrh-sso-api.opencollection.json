@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account SSO API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SSO",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sso Check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/sso/check",
+            "params": [
+              {
+                "name": "origin",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "return_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "SSO domain endpoint. Checks if the SSO session has a valid customer_token.\n- If authenticated: create one-time token -> redirect to {origin}/sso/callback\n- If not: redirect to SSO login page with redirect_to={origin}{return_to}"
+        },
+        {
+          "info": {
+            "name": "Sso Logout",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/sso/logout",
+            "params": [
+              {
+                "name": "return_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "SSO domain endpoint. Clears the SSO session and redirects back to the store."
+        },
+        {
+          "info": {
+            "name": "Sso Callback",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/sso/callback",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "return_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Store domain endpoint. Receives one-time token from SSO, sets store session.\nHandles Case A: SSO already had a session for this customer."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

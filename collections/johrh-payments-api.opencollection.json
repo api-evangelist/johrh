@@ -1,0 +1,415 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitrin Account Payments API",
+    "version": "2026.2.23"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Handle Tabby Success",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tabby/success",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payment_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Handle Tabby Success"
+        },
+        {
+          "info": {
+            "name": "Handle Tamara Success",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tamara/success",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Handle Tamara Success"
+        },
+        {
+          "info": {
+            "name": "Handle Emkan Success",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/emkan/success",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Emkan Success"
+        },
+        {
+          "info": {
+            "name": "Handle Payment Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/madfu/failure",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Payment Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Payment Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/emkan/failure",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Payment Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Payment Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tamara/failure",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Payment Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Payment Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tabby/failure",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Payment Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Payment Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/emkan/cancel",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Payment Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Payment Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tamara/cancel",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Payment Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Payment Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tabby/cancel",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Payment Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Zidpay Success",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/zidpay/callback",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "paymentReferenceId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Handle Zidpay Success"
+        },
+        {
+          "info": {
+            "name": "Handle Zidpay Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/zidpay/error",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "paymentReferenceId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Handle Zidpay Failure"
+        },
+        {
+          "info": {
+            "name": "Get Checkout Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/from-token",
+            "params": [
+              {
+                "name": "checkout-token",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "The endpoint used by mobile apps to correctly use the checkout mobile webview. apps that use vitrin APIs for cart operations do not need this."
+        },
+        {
+          "info": {
+            "name": "Handle Mispay Callback",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/mis-callback",
+            "params": [
+              {
+                "name": "_",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Handle Mispay Callback"
+        },
+        {
+          "info": {
+            "name": "Handle Madfu Success",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/madfu/success",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Madfu Success"
+        },
+        {
+          "info": {
+            "name": "Handle Madfu Cancel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/madfu/cancel",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Madfu Cancel"
+        },
+        {
+          "info": {
+            "name": "Handle Tap Callback",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tap/callback",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tap_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Handle Tap payment redirect callback"
+        },
+        {
+          "info": {
+            "name": "Handle Tap Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tap/cancel",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Tap Failure"
+        },
+        {
+          "info": {
+            "name": "Handle Tap Failure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:payment_token/tap/failure",
+            "params": [
+              {
+                "name": "payment_token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Handle Tap Failure"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
