@@ -36,6 +36,17 @@ image: https://media.zid.store/cdn-cgi/image/w=1200,h=630,q=90/https://media.zid
 tags:
 - Company
 - Retail
+- E-Commerce
+- Fashion
+- Apparel
+- Abaya
+- Modest Wear
+- Saudi Arabia
+- Zid
+- Storefront
+tags_raw:
+- Company
+- Retail
 - E-commerce
 - Fashion
 - Apparel
@@ -65,6 +76,8 @@ apis:
   humanURL: https://johrh.com
   baseURL: https://johrh.com
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -107,6 +120,8 @@ apis:
   humanURL: https://johrh.com
   baseURL: https://johrh.com
   tags:
+  - Internal
+  tags_raw:
   - internal
   properties:
   - type: OpenAPI
@@ -135,6 +150,8 @@ apis:
   humanURL: https://johrh.com
   baseURL: https://johrh.com
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -163,6 +180,8 @@ apis:
   humanURL: https://johrh.com
   baseURL: https://johrh.com
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -177,6 +196,8 @@ apis:
   humanURL: https://johrh.com
   baseURL: https://johrh.com
   tags:
+  - Redirects
+  tags_raw:
   - redirects
   properties:
   - type: OpenAPI
