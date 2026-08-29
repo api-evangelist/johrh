@@ -1,0 +1,25 @@
+slug: johrh
+provider: Johrh
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Retail & Consumer Goods
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Payments
+  spec_file: johrh-payments-api-openapi.yml
+  capability_id: BC-2320.20
+  capability_id_l1: BC-2320
+  capability_name: Tender and Payment Acceptance Management
+  confidence: 0.72
+  evidence: GET /checkout/{payment_token}/tabby/success ... Handle Tabby Success; GET /checkout/{payment_token}/zidpay/callback
+  reason: Operations handle payment-provider callbacks (Tabby, Tamara, Emkan, ZidPay) at checkout — acceptance
+    of consumer payment tenders in the retail sale transaction. Sub-capability is tender/payment acceptance;
+    confidence moderate as it is an e-commerce checkout rather than a physical till.
