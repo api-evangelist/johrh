@@ -207,7 +207,7 @@ apis:
   humanURL: https://johrh.com
   baseURL: https://johrh.com
   tags:
-  - Redirects
+  - redirects
   tags_raw:
   - redirects
   properties:
