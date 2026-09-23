@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Vitrin Account Metrics API
+  title: Vitrin Metrics API
   version: 2026.2.23
 tags:
 - name: Metrics

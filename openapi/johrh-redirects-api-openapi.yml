@@ -1,14 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Vitrin Account redirects API
+  title: Vitrin Redirects API
   version: 2026.2.23
 tags:
-- name: redirects
+- name: Redirects
 paths:
   /coupon/{coupon_code}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Coupon
       operationId: redirect_coupon_coupon__coupon_code__get
       responses:
@@ -20,7 +20,7 @@ paths:
   /availability/{availability_referer}/products/{product_id}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Product Availability
       operationId: redirect_product_availability_availability__availability_referer__products__product_id__get
       parameters:
@@ -45,7 +45,7 @@ paths:
   /products/{product_id}/coupon/{coupon_code}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Product Coupon
       operationId: redirect_product_coupon_products__product_id__coupon__coupon_code__get
       parameters:
@@ -70,7 +70,7 @@ paths:
   /products/{slug}/reviews/add:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Product Reviews
       operationId: redirect_product_reviews_products__slug__reviews_add_get
       parameters:
@@ -95,7 +95,7 @@ paths:
   /products/sales:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Sale Product
       operationId: redirect_sale_product_products_sales_get
       responses:
@@ -107,7 +107,7 @@ paths:
   /p:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Products List
       operationId: redirect_products_list_p_get
       responses:
@@ -119,7 +119,7 @@ paths:
   /p/{slug}/reviews/new:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Add Product Review
       operationId: redirect_add_product_review_p__slug__reviews_new_get
       parameters:
@@ -144,7 +144,7 @@ paths:
   /p/{slug}/reviews:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Product Reviews Shorthand
       operationId: redirect_product_reviews_shorthand_p__slug__reviews_get
       parameters:
@@ -169,7 +169,7 @@ paths:
   /p/{slug}/questions/new:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Add Question
       operationId: redirect_add_question_p__slug__questions_new_get
       parameters:
@@ -194,7 +194,7 @@ paths:
   /p/{slug}/questions:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Product Questions
       operationId: redirect_product_questions_p__slug__questions_get
       parameters:
@@ -219,7 +219,7 @@ paths:
   /p/{slug}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Product Detail
       operationId: redirect_product_detail_p__slug__get
       parameters:
@@ -244,7 +244,7 @@ paths:
   /c:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Categories List
       operationId: redirect_categories_list_c_get
       responses:
@@ -256,7 +256,7 @@ paths:
   /c/{category_id}/{slug}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Category With Slug
       operationId: redirect_category_with_slug_c__category_id___slug__get
       parameters:
@@ -287,7 +287,7 @@ paths:
   /c/{category_id}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Category No Slug
       operationId: redirect_category_no_slug_c__category_id__get
       parameters:
@@ -312,7 +312,7 @@ paths:
   /o/{code}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Order Invoice
       operationId: redirect_order_invoice_o__code__get
       parameters:
@@ -337,7 +337,7 @@ paths:
   /cart/view:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Cart
       operationId: redirect_cart_cart_view_get
       responses:
@@ -349,7 +349,7 @@ paths:
   /checkout/single-checkout:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Checkout
       operationId: redirect_checkout_checkout_single_checkout_get
       responses:
@@ -361,7 +361,7 @@ paths:
   /account-orders:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Account Orders
       operationId: redirect_account_orders_account_orders_get
       responses:
@@ -373,7 +373,7 @@ paths:
   /account-profile:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Account Profile
       operationId: redirect_account_profile_account_profile_get
       responses:
@@ -385,7 +385,7 @@ paths:
   /account-addresses:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Account Addresses
       operationId: redirect_account_addresses_account_addresses_get
       responses:
@@ -397,7 +397,7 @@ paths:
   /account-wishlist:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Account Wishlist
       operationId: redirect_account_wishlist_account_wishlist_get
       responses:
@@ -409,7 +409,7 @@ paths:
   /account-loyalty-program:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Account Loyalty
       operationId: redirect_account_loyalty_account_loyalty_program_get
       responses:
@@ -421,7 +421,7 @@ paths:
   /affiliate/{affiliate_referrer}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Affiliate
       operationId: redirect_affiliate_affiliate__affiliate_referrer__get
       parameters:
@@ -453,7 +453,7 @@ paths:
   /affiliate/{affiliate_referer}/{product_id}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Detect Affiliate Product
       operationId: detect_affiliate_product_affiliate__affiliate_referer___product_id__get
       parameters:
@@ -484,7 +484,7 @@ paths:
   /locales/{locale}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Change Locale
       operationId: change_locale_locales__locale__get
       parameters:
@@ -526,7 +526,7 @@ paths:
   /checkout/choose-address-and-shipping:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Account Addresses
       operationId: redirect_account_addresses_checkout_choose_address_and_shipping_get
       responses:
@@ -538,7 +538,7 @@ paths:
   /{slug}/{product_id}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Salla Product
       operationId: redirect_salla_product__slug___product_id__get
       parameters:
@@ -563,7 +563,7 @@ paths:
   /{slug}/{category_id}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Salla Category
       operationId: redirect_salla_category__slug___category_id__get
       parameters:
@@ -588,7 +588,7 @@ paths:
   /blog:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Salla Blog List
       operationId: redirect_salla_blog_list_blog_get
       responses:
@@ -600,7 +600,7 @@ paths:
   /blog/{slug}/{blog_id}:
     get:
       tags:
-      - redirects
+      - Redirects
       summary: Redirect Salla Blog Post
       operationId: redirect_salla_blog_post_blog__slug___blog_id__get
       parameters:
@@ -624,6 +624,15 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
     ValidationError:
       properties:
         loc:
@@ -650,12 +659,3 @@ components:
       - msg
       - type
       title: ValidationError
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError

@@ -1,36 +1,55 @@
 {
   "provider": "johrh",
   "sources": [
-    "johrh-account-api-openapi.yml",
-    "johrh-auth-api-openapi.yml",
-    "johrh-categories-api-openapi.yml",
-    "johrh-checkout-api-openapi.yml",
-    "johrh-internal-api-openapi.yml",
-    "johrh-metrics-api-openapi.yml",
-    "johrh-orders-api-openapi.yml",
-    "johrh-payments-api-openapi.yml",
-    "johrh-products-api-openapi.yml",
-    "johrh-redirects-api-openapi.yml",
-    "johrh-sso-api-openapi.yml",
-    "johrh-storefront-api-openapi.yml"
+    "_original/johrh-openapi.json"
   ],
   "outputs": [
     "johrh-account-api-openapi.yml",
     "johrh-auth-api-openapi.yml",
     "johrh-categories-api-openapi.yml",
     "johrh-checkout-api-openapi.yml",
-    "johrh-internal-api-openapi.yml",
     "johrh-metrics-api-openapi.yml",
     "johrh-orders-api-openapi.yml",
     "johrh-payments-api-openapi.yml",
     "johrh-products-api-openapi.yml",
-    "johrh-redirects-api-openapi.yml",
     "johrh-sso-api-openapi.yml",
-    "johrh-storefront-api-openapi.yml"
+    "johrh-storefront-api-openapi.yml",
+    "johrh-internal-api-openapi.yml",
+    "johrh-redirects-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "johrh-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "johrh-openapi.json: tagged paths GET /metrics -> Metrics",
+    "johrh-openapi.json: declared missing tag: Account",
+    "johrh-openapi.json: declared missing tag: Auth",
+    "johrh-openapi.json: declared missing tag: Categories",
+    "johrh-openapi.json: declared missing tag: Checkout",
+    "johrh-openapi.json: declared missing tag: Metrics",
+    "johrh-openapi.json: declared missing tag: Orders",
+    "johrh-openapi.json: declared missing tag: Payments",
+    "johrh-openapi.json: declared missing tag: Products",
+    "johrh-openapi.json: declared missing tag: SSO",
+    "johrh-openapi.json: declared missing tag: Storefront",
+    "johrh-openapi.json: declared missing tag: internal",
+    "johrh-openapi.json: declared missing tag: redirects",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "johrh-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-checkout-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-internal-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-payments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-products-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-redirects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-sso-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "johrh-storefront-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
