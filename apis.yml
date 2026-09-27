@@ -71,7 +71,6 @@ apis:
   name: Johrh Account API
   description: The Account API from Johrh — 9 operation(s) for account.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Account
   properties:
@@ -85,7 +84,6 @@ apis:
   name: Johrh Auth API
   description: The Auth API from Johrh — 4 operation(s) for auth.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Authentication
   tags_raw:
@@ -101,7 +99,6 @@ apis:
   name: Johrh Categories API
   description: The Categories API from Johrh — 3 operation(s) for categories.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Categories
   properties:
@@ -115,7 +112,6 @@ apis:
   name: Johrh Checkout API
   description: The Checkout API from Johrh — 7 operation(s) for checkout.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Checkout
   properties:
@@ -126,10 +122,9 @@ apis:
   - type: ErrorCatalog
     url: errors/johrh-problem-types.yml
 - aid: johrh:johrh-internal-api
-  name: Johrh internal API
+  name: Johrh Internal API
   description: The internal API from Johrh — 25 operation(s) for internal.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Internal
   tags_raw:
@@ -145,7 +140,6 @@ apis:
   name: Johrh Metrics API
   description: The Metrics API from Johrh — 1 operation(s) for metrics.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Metrics
   properties:
@@ -159,7 +153,6 @@ apis:
   name: Johrh Orders API
   description: The Orders API from Johrh — 6 operation(s) for orders.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Order
   tags_raw:
@@ -175,7 +168,6 @@ apis:
   name: Johrh Payments API
   description: The Payments API from Johrh — 19 operation(s) for payments.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Payments
   properties:
@@ -189,7 +181,6 @@ apis:
   name: Johrh Products API
   description: The Products API from Johrh — 6 operation(s) for products.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Product
   tags_raw:
@@ -202,10 +193,9 @@ apis:
   - type: ErrorCatalog
     url: errors/johrh-problem-types.yml
 - aid: johrh:johrh-redirects-api
-  name: Johrh redirects API
+  name: Johrh Redirects API
   description: The redirects API from Johrh — 30 operation(s) for redirects.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Redirects
   tags_raw:
@@ -221,7 +211,6 @@ apis:
   name: Johrh SSO API
   description: The SSO API from Johrh — 3 operation(s) for sso.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - SSO
   properties:
@@ -235,7 +224,6 @@ apis:
   name: Johrh Storefront API
   description: The Storefront API from Johrh — 17 operation(s) for storefront.
   humanURL: https://johrh.com
-  baseURL: https://johrh.com
   tags:
   - Storefront
   properties:
