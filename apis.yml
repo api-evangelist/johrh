@@ -136,19 +136,6 @@ apis:
     url: https://johrh.com/openapi.json
   - type: ErrorCatalog
     url: errors/johrh-problem-types.yml
-- aid: johrh:johrh-metrics-api
-  name: Johrh Metrics API
-  description: The Metrics API from Johrh — 1 operation(s) for metrics.
-  humanURL: https://johrh.com
-  tags:
-  - Metrics
-  properties:
-  - type: OpenAPI
-    url: openapi/johrh-metrics-api-openapi.yml
-  - type: APIReference
-    url: https://johrh.com/openapi.json
-  - type: ErrorCatalog
-    url: errors/johrh-problem-types.yml
 - aid: johrh:johrh-orders-api
   name: Johrh Orders API
   description: The Orders API from Johrh — 6 operation(s) for orders.

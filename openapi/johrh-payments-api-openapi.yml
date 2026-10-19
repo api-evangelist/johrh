@@ -96,8 +96,8 @@ paths:
     get:
       tags:
       - Payments
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__madfu_failure_get
+      summary: Madfu Failure
+      operationId: madfu_failure_checkout__payment_token__madfu_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -121,8 +121,8 @@ paths:
     get:
       tags:
       - Payments
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__emkan_failure_get
+      summary: Emkan Failure
+      operationId: emkan_failure_checkout__payment_token__emkan_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -146,8 +146,8 @@ paths:
     get:
       tags:
       - Payments
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tamara_failure_get
+      summary: Tamara Failure
+      operationId: tamara_failure_checkout__payment_token__tamara_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -171,8 +171,8 @@ paths:
     get:
       tags:
       - Payments
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tabby_failure_get
+      summary: Tabby Failure
+      operationId: tabby_failure_checkout__payment_token__tabby_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -196,8 +196,8 @@ paths:
     get:
       tags:
       - Payments
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__emkan_cancel_get
+      summary: Emkan Cancel
+      operationId: emkan_cancel_checkout__payment_token__emkan_cancel_get
       parameters:
       - name: payment_token
         in: path
@@ -221,8 +221,8 @@ paths:
     get:
       tags:
       - Payments
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tamara_cancel_get
+      summary: Tamara Cancel
+      operationId: tamara_cancel_checkout__payment_token__tamara_cancel_get
       parameters:
       - name: payment_token
         in: path
@@ -246,8 +246,8 @@ paths:
     get:
       tags:
       - Payments
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tabby_cancel_get
+      summary: Tabby Cancel
+      operationId: tabby_cancel_checkout__payment_token__tabby_cancel_get
       parameters:
       - name: payment_token
         in: path
@@ -562,15 +562,6 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
     ValidationError:
       properties:
         loc:
@@ -597,3 +588,12 @@ components:
       - msg
       - type
       title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

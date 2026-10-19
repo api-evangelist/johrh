@@ -103,6 +103,17 @@ paths:
           description: Filter by category
           title: Categories
         description: Filter by category
+      - name: brand
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: uuid
+          - type: 'null'
+          description: Filter by brand id
+          title: Brand
+        description: Filter by brand id
       - name: price_min
         in: query
         required: false
@@ -149,6 +160,20 @@ paths:
           description: Filter by attribute values
           title: Attribute Values
         description: Filter by attribute values
+      - name: availability
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - enum:
+            - in_stock
+            - out_of_stock
+            type: string
+          - type: string
+          - type: 'null'
+          description: 'Stock availability filter: in_stock, out_of_stock'
+          title: Availability
+        description: 'Stock availability filter: in_stock, out_of_stock'
       responses:
         '200':
           description: Successful Response
@@ -247,6 +272,17 @@ paths:
           description: Filter by category
           title: Categories
         description: Filter by category
+      - name: brand
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: uuid
+          - type: 'null'
+          description: Filter by brand id
+          title: Brand
+        description: Filter by brand id
       - name: price_min
         in: query
         required: false
@@ -293,6 +329,20 @@ paths:
           description: Filter by attribute values
           title: Attribute Values
         description: Filter by attribute values
+      - name: availability
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - enum:
+            - in_stock
+            - out_of_stock
+            type: string
+          - type: string
+          - type: 'null'
+          description: 'Stock availability filter: in_stock, out_of_stock'
+          title: Availability
+        description: 'Stock availability filter: in_stock, out_of_stock'
       responses:
         '200':
           description: Successful Response
@@ -308,15 +358,6 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
     ValidationError:
       properties:
         loc:
@@ -343,3 +384,12 @@ components:
       - msg
       - type
       title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

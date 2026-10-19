@@ -173,17 +173,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+  /address-collection:
+    get:
+      tags:
+      - Orders
+      summary: Render the gift recipient address collection page
+      description: 'Landing page for order consignee address collection.
+
+
+        The capability is forwarded verbatim; Vitrin never decodes it. The
+
+        fetched state is seeded into the SDK flow so the page renders without a
+
+        second round trip — SDK versions that ignore the seed still fetch
+
+        `/api/v1/orders/recipient-address` themselves.'
+      operationId: recipient_address_address_collection_get
+      parameters:
+      - name: rac
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Recipient address capability, signed by the backend
+          default: ''
+          title: Rac
+        description: Recipient address capability, signed by the backend
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            text/html:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
     ValidationError:
       properties:
         loc:
@@ -210,3 +240,12 @@ components:
       - msg
       - type
       title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

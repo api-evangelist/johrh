@@ -5,6 +5,691 @@ info:
 tags:
 - name: Storefront
 paths:
+  /robots.txt:
+    get:
+      tags:
+      - Storefront
+      summary: Robots Txt
+      operationId: robots_txt_robots_txt_head
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+    head:
+      tags:
+      - Storefront
+      summary: Robots Txt
+      operationId: headRobotsTxt
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      x-operation-id-source: normalized
+      x-operation-id-original: robots_txt_robots_txt_head
+  /llms.txt:
+    get:
+      tags:
+      - Storefront
+      summary: Llms Txt
+      operationId: llms_txt_llms_txt_head
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+    head:
+      tags:
+      - Storefront
+      summary: Llms Txt
+      operationId: headLlmsTxt
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      x-operation-id-source: normalized
+      x-operation-id-original: llms_txt_llms_txt_head
+  /.well-known/{file}:
+    head:
+      tags:
+      - Storefront
+      summary: Well Known
+      operationId: well_known__well_known__file__head
+      parameters:
+      - name: file
+        in: path
+        required: true
+        schema:
+          type: string
+          title: File
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    get:
+      tags:
+      - Storefront
+      summary: Well Known
+      operationId: getWellKnownByFile
+      parameters:
+      - name: file
+        in: path
+        required: true
+        schema:
+          type: string
+          title: File
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-operation-id-source: normalized
+      x-operation-id-original: well_known__well_known__file__head
+  /sitemaps/sitemap_feeds.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: products_feed_sitemaps_sitemap_feeds_xml_head
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+    head:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: headSitemapsSitemapFeedsXml
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+      x-operation-id-source: normalized
+      x-operation-id-original: products_feed_sitemaps_sitemap_feeds_xml_head
+  /sitemaps/feeds.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: products_feed_sitemaps_feeds_xml_head
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+    head:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: headSitemapsFeedsXml
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+      x-operation-id-source: normalized
+      x-operation-id-original: products_feed_sitemaps_feeds_xml_head
+  /sitemap_feeds.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: products_feed_sitemap_feeds_xml_head
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+    head:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: headSitemapFeedsXml
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+      x-operation-id-source: normalized
+      x-operation-id-original: products_feed_sitemap_feeds_xml_head
+  /feeds.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: products_feed_feeds_xml_head
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+    head:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: headFeedsXml
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+      x-operation-id-source: normalized
+      x-operation-id-original: products_feed_feeds_xml_head
+  /feeds/product/{feed_map}:
+    get:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: products_feed_feeds_product__feed_map__head
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+    head:
+      tags:
+      - Storefront
+      summary: Products Feed
+      operationId: headFeedsProductByFeedMap
+      responses:
+        '302':
+          description: Successful Response
+      deprecated: true
+      x-operation-id-source: normalized
+      x-operation-id-original: products_feed_feeds_product__feed_map__head
+  /sitemaps/{map_type}.xml:
+    head:
+      tags:
+      - Storefront
+      summary: Sitemap Xml
+      operationId: sitemap_xml_sitemaps__map_type__xml_head
+      parameters:
+      - name: map_type
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - enum:
+            - sitemap
+            - products
+            - product
+            - pages
+            - categories
+            - index
+            - products_reviews
+            type: string
+          - type: string
+          title: Map Type
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    get:
+      tags:
+      - Storefront
+      summary: Sitemap Xml
+      operationId: getSitemaps{mapType}Xml
+      parameters:
+      - name: map_type
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - enum:
+            - sitemap
+            - products
+            - product
+            - pages
+            - categories
+            - index
+            - products_reviews
+            type: string
+          - type: string
+          title: Map Type
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-operation-id-source: normalized
+      x-operation-id-original: sitemap_xml_sitemaps__map_type__xml_head
+  /{map_type}.xml:
+    head:
+      tags:
+      - Storefront
+      summary: Sitemap Xml
+      operationId: sitemap_xml__map_type__xml_head
+      parameters:
+      - name: map_type
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - enum:
+            - sitemap
+            - products
+            - product
+            - pages
+            - categories
+            - index
+            - products_reviews
+            type: string
+          - type: string
+          title: Map Type
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    get:
+      tags:
+      - Storefront
+      summary: Sitemap Xml
+      operationId: get{mapType}Xml
+      parameters:
+      - name: map_type
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - enum:
+            - sitemap
+            - products
+            - product
+            - pages
+            - categories
+            - index
+            - products_reviews
+            type: string
+          - type: string
+          title: Map Type
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-operation-id-source: normalized
+      x-operation-id-original: sitemap_xml__map_type__xml_head
+  /feeds/{token}/feed.csv:
+    head:
+      tags:
+      - Storefront
+      summary: Product Feed V2
+      description: 'Stream the gzipped product feed (XML, or CSV for OpenAI) from the
+
+        merchant''s own domain.
+
+
+        Backs the new `product_feeds` system in extension-backend. The token is
+
+        stable per-feed (rotated on regen via S3 key reuse), and the underlying
+
+        object is uploaded with `Content-Encoding: gzip`, so we pass the raw
+
+        bytes through unchanged and mirror the upstream headers so crawlers
+
+        (Meta Catalog, TikTok, Google Merchant Center, OpenAI) decompress correctly.
+
+
+        HEAD is forwarded upstream as HEAD: crawlers probe it before fetching,
+
+        and we answer with the object''s headers without streaming the body.'
+      operationId: product_feed_v2_feeds__token__feed_csv_head
+      parameters:
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    get:
+      tags:
+      - Storefront
+      summary: Product Feed V2
+      description: 'Stream the gzipped product feed (XML, or CSV for OpenAI) from the
+
+        merchant''s own domain.
+
+
+        Backs the new `product_feeds` system in extension-backend. The token is
+
+        stable per-feed (rotated on regen via S3 key reuse), and the underlying
+
+        object is uploaded with `Content-Encoding: gzip`, so we pass the raw
+
+        bytes through unchanged and mirror the upstream headers so crawlers
+
+        (Meta Catalog, TikTok, Google Merchant Center, OpenAI) decompress correctly.
+
+
+        HEAD is forwarded upstream as HEAD: crawlers probe it before fetching,
+
+        and we answer with the object''s headers without streaming the body.'
+      operationId: getFeedsByTokenFeedCsv
+      parameters:
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-operation-id-source: normalized
+      x-operation-id-original: product_feed_v2_feeds__token__feed_csv_head
+  /feeds/{token}/feed.xml:
+    head:
+      tags:
+      - Storefront
+      summary: Product Feed V2
+      description: 'Stream the gzipped product feed (XML, or CSV for OpenAI) from the
+
+        merchant''s own domain.
+
+
+        Backs the new `product_feeds` system in extension-backend. The token is
+
+        stable per-feed (rotated on regen via S3 key reuse), and the underlying
+
+        object is uploaded with `Content-Encoding: gzip`, so we pass the raw
+
+        bytes through unchanged and mirror the upstream headers so crawlers
+
+        (Meta Catalog, TikTok, Google Merchant Center, OpenAI) decompress correctly.
+
+
+        HEAD is forwarded upstream as HEAD: crawlers probe it before fetching,
+
+        and we answer with the object''s headers without streaming the body.'
+      operationId: product_feed_v2_feeds__token__feed_xml_head
+      parameters:
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    get:
+      tags:
+      - Storefront
+      summary: Product Feed V2
+      description: 'Stream the gzipped product feed (XML, or CSV for OpenAI) from the
+
+        merchant''s own domain.
+
+
+        Backs the new `product_feeds` system in extension-backend. The token is
+
+        stable per-feed (rotated on regen via S3 key reuse), and the underlying
+
+        object is uploaded with `Content-Encoding: gzip`, so we pass the raw
+
+        bytes through unchanged and mirror the upstream headers so crawlers
+
+        (Meta Catalog, TikTok, Google Merchant Center, OpenAI) decompress correctly.
+
+
+        HEAD is forwarded upstream as HEAD: crawlers probe it before fetching,
+
+        and we answer with the object''s headers without streaming the body.'
+      operationId: getFeedsByTokenFeedXml
+      parameters:
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-operation-id-source: normalized
+      x-operation-id-original: product_feed_v2_feeds__token__feed_xml_head
+  /feeds/reviews/google:
+    get:
+      tags:
+      - Storefront
+      summary: Products Reviews Feed
+      operationId: products_reviews_feed_feeds_reviews_google_head
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+    head:
+      tags:
+      - Storefront
+      summary: Products Reviews Feed
+      operationId: headFeedsReviewsGoogle
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+      x-operation-id-source: normalized
+      x-operation-id-original: products_reviews_feed_feeds_reviews_google_head
+  /blog/feed.rss:
+    get:
+      tags:
+      - Storefront
+      summary: Blog Rss Feed
+      operationId: blog_rss_feed_blog_feed_rss_head
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+    head:
+      tags:
+      - Storefront
+      summary: Blog Rss Feed
+      operationId: headBlogFeedRss
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      x-operation-id-source: normalized
+      x-operation-id-original: blog_rss_feed_blog_feed_rss_head
+  /blog/sitemap.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Blog Sitemap
+      operationId: blog_sitemap_blog_sitemap_xml_head
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+    head:
+      tags:
+      - Storefront
+      summary: Blog Sitemap
+      operationId: headBlogSitemapXml
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      x-operation-id-source: normalized
+      x-operation-id-original: blog_sitemap_blog_sitemap_xml_head
+  /blog/categories/{category_slug}/feed.rss:
+    head:
+      tags:
+      - Storefront
+      summary: Blog Category Rss Feed
+      operationId: blog_category_rss_feed_blog_categories__category_slug__feed_rss_head
+      parameters:
+      - name: category_slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Category Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    get:
+      tags:
+      - Storefront
+      summary: Blog Category Rss Feed
+      operationId: getBlogCategoriesByCategorySlugFeedRss
+      parameters:
+      - name: category_slug
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Category Slug
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-operation-id-source: normalized
+      x-operation-id-original: blog_category_rss_feed_blog_categories__category_slug__feed_rss_head
+  /brands/sitemap.xml:
+    get:
+      tags:
+      - Storefront
+      summary: Brands Sitemap
+      operationId: brands_sitemap_brands_sitemap_xml_head
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+    head:
+      tags:
+      - Storefront
+      summary: Brands Sitemap
+      operationId: headBrandsSitemapXml
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/xml:
+              schema:
+                type: string
+      x-operation-id-source: normalized
+      x-operation-id-original: brands_sitemap_brands_sitemap_xml_head
   /blogs:
     get:
       tags:
@@ -152,8 +837,8 @@ paths:
     get:
       tags:
       - Storefront
-      summary: Landing Page
-      operationId: landing_page_l__slug__get
+      summary: Product Landing Page
+      operationId: product_landing_page_l__slug__get
       parameters:
       - name: slug
         in: path
@@ -214,181 +899,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /.well-known/{file}:
-    get:
-      tags:
-      - Storefront
-      summary: Well Known
-      operationId: well_known__well_known__file__get
-      parameters:
-      - name: file
-        in: path
-        required: true
-        schema:
-          type: string
-          title: File
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-  /sitemaps/{map_type}.xml:
-    get:
-      tags:
-      - Storefront
-      summary: Sitemap Xml
-      operationId: sitemap_xml_sitemaps__map_type__xml_get
-      parameters:
-      - name: map_type
-        in: path
-        required: true
-        schema:
-          anyOf:
-          - enum:
-            - sitemap
-            - products
-            - product
-            - feeds
-            - pages
-            - categories
-            - index
-            - products_reviews
-            type: string
-          - type: string
-          title: Map Type
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/xml:
-              schema:
-                type: string
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-  /{map_type}.xml:
-    get:
-      tags:
-      - Storefront
-      summary: Sitemap Xml
-      operationId: sitemap_xml__map_type__xml_get
-      parameters:
-      - name: map_type
-        in: path
-        required: true
-        schema:
-          anyOf:
-          - enum:
-            - sitemap
-            - products
-            - product
-            - feeds
-            - pages
-            - categories
-            - index
-            - products_reviews
-            type: string
-          - type: string
-          title: Map Type
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/xml:
-              schema:
-                type: string
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-  /feeds/product/{feed_map}:
-    get:
-      tags:
-      - Storefront
-      summary: Products Feed
-      operationId: products_feed_feeds_product__feed_map__get
-      parameters:
-      - name: feed_map
-        in: path
-        required: true
-        schema:
-          type: string
-          title: Feed Map
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/xml:
-              schema:
-                type: string
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-  /feeds/{token}/feed.xml:
-    get:
-      tags:
-      - Storefront
-      summary: Product Feed V2
-      description: 'Stream the gzipped XML product feed from the merchant''s own domain.
-
-
-        Backs the new `product_feeds` system in extension-backend. The token is
-
-        stable per-feed (rotated on regen via S3 key reuse), and the underlying
-
-        object is uploaded with `Content-Encoding: gzip`, so we pass the raw
-
-        bytes through unchanged and mirror the upstream headers so crawlers
-
-        (Meta Catalog, TikTok, Google Merchant Center) decompress correctly.'
-      operationId: product_feed_v2_feeds__token__feed_xml_get
-      parameters:
-      - name: token
-        in: path
-        required: true
-        schema:
-          type: string
-          title: Token
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-  /feeds/reviews/google:
-    get:
-      tags:
-      - Storefront
-      summary: Products Reviews Feed
-      operationId: products_reviews_feed_feeds_reviews_google_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/xml:
-              schema:
-                type: string
   /validate:
     get:
       tags:
@@ -402,66 +912,8 @@ paths:
             text/html:
               schema:
                 type: string
-  /blog/feed.rss:
-    get:
-      tags:
-      - Storefront
-      summary: Blog Rss Feed
-      operationId: blog_rss_feed_blog_feed_rss_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-  /blog/sitemap.xml:
-    get:
-      tags:
-      - Storefront
-      summary: Blog Sitemap
-      operationId: blog_sitemap_blog_sitemap_xml_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-  /blog/categories/{category_slug}/feed.rss:
-    get:
-      tags:
-      - Storefront
-      summary: Blog Category Rss Feed
-      operationId: blog_category_rss_feed_blog_categories__category_slug__feed_rss_get
-      parameters:
-      - name: category_slug
-        in: path
-        required: true
-        schema:
-          type: string
-          title: Category Slug
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
     ValidationError:
       properties:
         loc:
@@ -488,3 +940,12 @@ components:
       - msg
       - type
       title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

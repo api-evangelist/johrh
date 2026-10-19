@@ -96,8 +96,8 @@ paths:
     get:
       tags:
       - Internal
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__madfu_failure_get
+      summary: Madfu Failure
+      operationId: madfu_failure_checkout__payment_token__madfu_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -121,8 +121,8 @@ paths:
     get:
       tags:
       - Internal
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__emkan_failure_get
+      summary: Emkan Failure
+      operationId: emkan_failure_checkout__payment_token__emkan_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -146,8 +146,8 @@ paths:
     get:
       tags:
       - Internal
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tamara_failure_get
+      summary: Tamara Failure
+      operationId: tamara_failure_checkout__payment_token__tamara_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -171,8 +171,8 @@ paths:
     get:
       tags:
       - Internal
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tabby_failure_get
+      summary: Tabby Failure
+      operationId: tabby_failure_checkout__payment_token__tabby_failure_get
       parameters:
       - name: payment_token
         in: path
@@ -196,8 +196,8 @@ paths:
     get:
       tags:
       - Internal
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__emkan_cancel_get
+      summary: Emkan Cancel
+      operationId: emkan_cancel_checkout__payment_token__emkan_cancel_get
       parameters:
       - name: payment_token
         in: path
@@ -221,8 +221,8 @@ paths:
     get:
       tags:
       - Internal
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tamara_cancel_get
+      summary: Tamara Cancel
+      operationId: tamara_cancel_checkout__payment_token__tamara_cancel_get
       parameters:
       - name: payment_token
         in: path
@@ -246,8 +246,8 @@ paths:
     get:
       tags:
       - Internal
-      summary: Handle Payment Failure
-      operationId: handle_payment_failure_checkout__payment_token__tabby_cancel_get
+      summary: Tabby Cancel
+      operationId: tabby_cancel_checkout__payment_token__tabby_cancel_get
       parameters:
       - name: payment_token
         in: path
@@ -610,31 +610,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /_cache/{prefix}:
-    delete:
-      tags:
-      - Internal
-      summary: Bump Cache Version
-      operationId: bump_cache_version__cache__prefix__delete
-      parameters:
-      - name: prefix
-        in: path
-        required: true
-        schema:
-          type: string
-          title: Prefix
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
   /_cache-bulk:
     delete:
       tags:
@@ -674,29 +649,8 @@ paths:
           content:
             application/json:
               schema: {}
-  /robots.txt:
-    get:
-      tags:
-      - Internal
-      summary: Robots Txt
-      operationId: robots_txt_robots_txt_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
 components:
   schemas:
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
     ValidationError:
       properties:
         loc:
@@ -723,3 +677,12 @@ components:
       - msg
       - type
       title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
