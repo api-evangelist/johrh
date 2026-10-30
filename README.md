@@ -64,6 +64,112 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Johrh is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Johrh (جوهره للعبايات, "Johrh for Abayas") is a Saudi Arabian direct-to-consumer women's fashion retailer specializing in abayas, jalabiyas, niqabs, scarves (طرح), bags, and complementary modest-wear. The brand operates an Arabic-language online storefront hosted on the Zid e-commerce platform, selling across price tiers (99 SAR, 199 SAR, and premium occasion pieces) with checkout through Saudi payment and buy-now-pay-later gateways (Tabby, Tamara, Madfu, Emkan, ZidPay, Tap, MisPay). It was surfaced as a portfolio-linked company and added to the API Evangelist network; its public web surface is served by the Zid "Vitrin" storefront application, whose OpenAPI is published at johrh.com/openapi.json.
 
-Backed by: 500-global — https://johrh.com
+**Areas:** Company · Retail · E-Commerce · Fashion · Apparel · Abaya · Modest Wear · Saudi Arabia · Zid · Storefront
+
+## Johrh on APIs.io
+
+Everything profiled for Johrh is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/johrh/](https://apis.io/providers/johrh/)** — or go straight to one of the APIs or properties below.
+
+### APIs (12)
+
+- [Johrh Account API](https://apis.io/apis/johrh/johrh-account-api/) — The Account API from Johrh — 9 operation(s) for account.
+- [Johrh Auth API](https://apis.io/apis/johrh/johrh-auth-api/) — The Auth API from Johrh — 4 operation(s) for auth.
+- [Johrh Categories API](https://apis.io/apis/johrh/johrh-categories-api/) — The Categories API from Johrh — 3 operation(s) for categories.
+- [Johrh Checkout API](https://apis.io/apis/johrh/johrh-checkout-api/) — The Checkout API from Johrh — 7 operation(s) for checkout.
+- [Johrh Internal API](https://apis.io/apis/johrh/johrh-internal-api/) — The internal API from Johrh — 25 operation(s) for internal.
+- [Johrh Metrics API](https://apis.io/apis/johrh/johrh-metrics-api/) — The Metrics API from Johrh — 1 operation(s) for metrics.
+- [Johrh Orders API](https://apis.io/apis/johrh/johrh-orders-api/) — The Orders API from Johrh — 6 operation(s) for orders.
+- [Johrh Payments API](https://apis.io/apis/johrh/johrh-payments-api/) — The Payments API from Johrh — 19 operation(s) for payments.
+- [Johrh Products API](https://apis.io/apis/johrh/johrh-products-api/) — The Products API from Johrh — 6 operation(s) for products.
+- [Johrh Redirects API](https://apis.io/apis/johrh/johrh-redirects-api/) — The redirects API from Johrh — 30 operation(s) for redirects.
+- [Johrh SSO API](https://apis.io/apis/johrh/johrh-sso-api/) — The SSO API from Johrh — 3 operation(s) for sso.
+- [Johrh Storefront API](https://apis.io/apis/johrh/johrh-storefront-api/) — The Storefront API from Johrh — 17 operation(s) for storefront.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Collections (12)
+
+Postman and Open Collection request collections.
+
+- [Vitrin Account API](https://apis.io/collections/johrh/open-johrh-account-api/)
+- [Vitrin Account Auth API](https://apis.io/collections/johrh/open-johrh-auth-api/)
+- [Vitrin Account Categories API](https://apis.io/collections/johrh/open-johrh-categories-api/)
+- [Vitrin Account Checkout API](https://apis.io/collections/johrh/open-johrh-checkout-api/)
+- [Vitrin Account internal API](https://apis.io/collections/johrh/open-johrh-internal-api/)
+- [Vitrin Account Metrics API](https://apis.io/collections/johrh/open-johrh-metrics-api/)
+- [Vitrin Account Orders API](https://apis.io/collections/johrh/open-johrh-orders-api/)
+- [Vitrin Account Payments API](https://apis.io/collections/johrh/open-johrh-payments-api/)
+- [Vitrin Account Products API](https://apis.io/collections/johrh/open-johrh-products-api/)
+- [Vitrin Account redirects API](https://apis.io/collections/johrh/open-johrh-redirects-api/)
+- [Vitrin Account SSO API](https://apis.io/collections/johrh/open-johrh-sso-api/)
+- [Vitrin Account Storefront API](https://apis.io/collections/johrh/open-johrh-storefront-api/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Johrh Domain Security](https://apis.io/security/johrh/johrh-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://johrh.com)
+- [Blog](https://johrh.com/blogs)
+
+## API Evangelist rating
+
+**Kin Score 14.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 36.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 0.0 |
+
+**Agent readiness 20.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/johrh/](https://apis.io/providers/johrh/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Johrh: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/johrh/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
